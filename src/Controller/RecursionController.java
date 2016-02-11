@@ -30,7 +30,7 @@ public class RecursionController {
 	}
 	
 	public String doFactorial(String input) {
-		calcVal = "The factorial of " + input + "is " + Integer.toString(mathTool.getFactorial(Integer.parseInt(input)));
+		calcVal = "The factorial of " + input + "is " + Double.toString(mathTool.getFactorial(Double.parseDouble(input)));
 		
 		return calcVal;
 	}

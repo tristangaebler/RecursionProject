@@ -20,7 +20,7 @@ public class RecursionTool
 		}	
 	}
 	
-	public int getFactorial(int position) {
+	public double getFactorial(double position) {
 		if(position < 0)
 		{
 			return Integer.MIN_VALUE;

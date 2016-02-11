@@ -79,7 +79,7 @@ public class RecursionPanel extends JPanel {
 				String userInput = inputField.getText();
 				if(checkInput(userInput))
 				{
-					displayArea.setText(baseController.doFactorial(userInput));
+					displayArea.append(baseController.doFactorial(userInput));
 				}
 			}
 		});
@@ -93,7 +93,7 @@ public class RecursionPanel extends JPanel {
 		
 		try
 		{
-			Integer.parseInt(input);
+			Double.parseDouble(input);
 			isNumber = true;
 			
 		} 
