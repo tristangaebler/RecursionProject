@@ -1,6 +1,8 @@
 package View;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -28,6 +30,7 @@ public class RecursionPanel extends JPanel {
 		displayArea = new JTextArea(10, 20);
 		baseLayout = new SpringLayout();
 		
+		
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -43,6 +46,7 @@ public class RecursionPanel extends JPanel {
 		displayArea.setWrapStyleWord(true);
 		displayArea.setLineWrap(true);
 		displayArea.setEditable(false);
+		displayArea.setText(baseController.getCalcVal());
 		
 	}
 	
@@ -60,8 +64,54 @@ public class RecursionPanel extends JPanel {
 	}
 	
 	private void setupListeners() {
+		fibonacciButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent click) {
+				String userInput = inputField.getText();
+				if(checkInput(userInput))
+				{
+					displayArea.setText(baseController.doFibonacci(userInput));
+				}
+			}
+		});
 		
+		factorialButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent click) {
+				String userInput = inputField.getText();
+				if(checkInput(userInput))
+				{
+					displayArea.setText(baseController.doFactorial(userInput));
+				}
+			}
+		});
 	}
 	
+
 	
+	private boolean checkInput(String input)
+	{
+		boolean isNumber = false;
+		
+		try
+		{
+			Integer.parseInt(input);
+			isNumber = true;
+			
+		} 
+		catch(Exception numException)
+		{
+			displayArea.setText("Type in a number");
+		}
+		
+		return isNumber;
+	}
 }
+
+
+
+
+
+
+
+
+
+
