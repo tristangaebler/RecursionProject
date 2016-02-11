@@ -6,10 +6,14 @@ import Controller.RecursionController;
 
 public class RecursionFrame extends JFrame {
 	private RecursionController baseController;
+	private RecursionPanel basePanel;
 	
-	public RecursionFrame(RecursionController baseContrller) {
-		this.baseController = baseController();
+	public RecursionFrame(RecursionController baseController) {
+		
+		this.baseController = baseController;
+		basePanel = new Recursion(baseController);
 	}
+
 	
 	private void setupFrame() {
 		

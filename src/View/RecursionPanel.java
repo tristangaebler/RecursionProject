@@ -5,7 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
-
 import Controller.RecursionController;
 
 public class RecursionPanel extends JPanel {
