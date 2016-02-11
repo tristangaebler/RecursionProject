@@ -11,11 +11,15 @@ public class RecursionFrame extends JFrame {
 	public RecursionFrame(RecursionController baseController) {
 		
 		this.baseController = baseController;
-		basePanel = new Recursion(baseController);
+		basePanel = new RecursionPanel(baseController);
+		setupFrame();
 	}
 
 	
 	private void setupFrame() {
-		
+		this.setContentPane(basePanel);
+		this.setTitle("Lets Recurse");
+		this.setSize(500,500);
+		this.setVisible(true);
 	}
 }
