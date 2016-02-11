@@ -27,6 +27,16 @@ public class RecursionPanel extends JPanel {
 		inputField = new JTextField(20);
 		displayArea = new JTextArea(10, 20);
 		baseLayout = new SpringLayout();
+		baseLayout.putConstraint(SpringLayout.NORTH, factorialButton, 0, SpringLayout.NORTH, fibonacciButton);
+		baseLayout.putConstraint(SpringLayout.WEST, factorialButton, 12, SpringLayout.EAST, fibonacciButton);
+		baseLayout.putConstraint(SpringLayout.WEST, inputField, 98, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, displayArea, 88, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, displayArea, 50, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, displayArea, -50, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, fibonacciButton, 74, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, fibonacciButton, -22, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, displayArea, -24, SpringLayout.NORTH, fibonacciButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, inputField, -19, SpringLayout.NORTH, displayArea);
 		
 		
 		setupPanel();
@@ -36,7 +46,8 @@ public class RecursionPanel extends JPanel {
 	
 	private void setupPanel() {
 		this.setLayout(baseLayout);
-		this.add(fibonacciButton, factorialButton);
+		this.add(fibonacciButton);
+		this.add(factorialButton);
 		this.add(inputField);
 		this.add(displayArea);
 		this.setBackground(Color.BLUE);
