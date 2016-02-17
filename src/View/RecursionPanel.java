@@ -32,6 +32,7 @@ public class RecursionPanel extends JPanel {
 		inputField = new JTextField(20);
 		displayArea = new JTextArea(10, 20);
 		baseLayout = new SpringLayout();
+		timeDisplay = new JTextArea(1,2);
 		this.baseTimer = baseTimer;
 		
 		
@@ -46,6 +47,7 @@ public class RecursionPanel extends JPanel {
 		this.add(factorialButton);
 		this.add(inputField);
 		this.add(displayArea);
+		this.add(timeDisplay);
 		this.setBackground(Color.BLUE);
 		displayArea.setWrapStyleWord(true);
 		displayArea.setLineWrap(true);
@@ -75,7 +77,7 @@ public class RecursionPanel extends JPanel {
 				if(checkInput(userInput))
 				{
 					displayArea.setText(baseController.doFibonacci(userInput));
-					displayArea.setText(baseTimer.toString());
+					timeDisplay.setText(baseTimer.toString());
 				}
 			}
 		});
@@ -86,7 +88,7 @@ public class RecursionPanel extends JPanel {
 				if(checkInput(userInput))
 				{
 					displayArea.append(baseController.doFactorial(userInput));
-					displayArea.setText(baseTimer.toString());
+					timeDisplay.setText(baseTimer.toString());
 				}
 			}
 		});
