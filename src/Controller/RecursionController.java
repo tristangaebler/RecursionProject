@@ -18,15 +18,14 @@ public class RecursionController {
 	public void start() {
 		time.startTimer();
 		calcVal = Integer.toString(mathTool.getFibNum(0));
-		
 		time.stopTimer();
 		time.toString();
 	}
 	
 	public RecursionController() {
 		mathTool = new RecursionTool();
-		baseFrame = new RecursionFrame(this);
 		time = new CodeTimer();
+		baseFrame = new RecursionFrame(this, time);
 	}
 	
 	public String getCalcVal() {

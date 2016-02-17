@@ -3,15 +3,18 @@ package View;
 import javax.swing.JFrame;
 
 import Controller.RecursionController;
+import Model.CodeTimer;
 
 public class RecursionFrame extends JFrame {
 	private RecursionController baseController;
+	private CodeTimer baseTimer;
 	private RecursionPanel basePanel;
 	
-	public RecursionFrame(RecursionController baseController) {
+	public RecursionFrame(RecursionController baseController, CodeTimer baseTimer) {
 		
 		this.baseController = baseController;
-		basePanel = new RecursionPanel(baseController);
+		this.baseTimer = baseTimer;
+		basePanel = new RecursionPanel(baseController, baseTimer);
 		setupFrame();
 	}
 
