@@ -19,7 +19,7 @@ public class RecursionController {
 		time.startTimer();
 		calcVal = Integer.toString(mathTool.getFibNum(0));
 		time.stopTimer();
-		time.toString();
+		time.toString();	
 	}
 	
 	public RecursionController() {

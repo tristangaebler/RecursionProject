@@ -27,14 +27,14 @@ public class RecursionPanel extends JPanel {
 	public RecursionPanel(RecursionController baseController, CodeTimer baseTimer) {
 		
 		this.baseController = baseController;
+		this.baseTimer = baseTimer;
 		fibonacciButton = new JButton("Get the fib number");
 		factorialButton = new JButton("Get n!");
 		inputField = new JTextField(20);
 		displayArea = new JTextArea(10, 20);
 		baseLayout = new SpringLayout();
 		timeDisplay = new JTextArea(1,2);
-		this.baseTimer = baseTimer;
-		
+	
 		
 		setupPanel();
 		setupLayout();
@@ -68,6 +68,8 @@ public class RecursionPanel extends JPanel {
 		baseLayout.putConstraint(SpringLayout.SOUTH, fibonacciButton, -22, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, displayArea, -24, SpringLayout.NORTH, fibonacciButton);
 		baseLayout.putConstraint(SpringLayout.SOUTH, inputField, -19, SpringLayout.NORTH, displayArea);
+		baseLayout.putConstraint(SpringLayout.NORTH, timeDisplay, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, timeDisplay, 147, SpringLayout.WEST, this);
 	}
 	
 	private void setupListeners() {
