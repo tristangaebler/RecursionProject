@@ -2,6 +2,7 @@ package Controller;
 
 import Model.RecursionTool;
 import View.RecursionFrame;
+import Model.CodeTimer;
 
 import java.sql.Time;
 import java.util.Timer;
@@ -12,14 +13,20 @@ public class RecursionController {
 	private RecursionTool mathTool;
 	private RecursionFrame baseFrame;
 	private String calcVal;
+	private CodeTimer time;
 	
 	public void start() {
+		time.startTimer();
 		calcVal = Integer.toString(mathTool.getFibNum(0));
+		
+		time.stopTimer();
+		time.toString();
 	}
 	
 	public RecursionController() {
 		mathTool = new RecursionTool();
 		baseFrame = new RecursionFrame(this);
+		time = new CodeTimer();
 	}
 	
 	public String getCalcVal() {
@@ -38,6 +45,9 @@ public class RecursionController {
 		
 		return calcVal;
 	}
+	
+	
+	
 	
 
 }

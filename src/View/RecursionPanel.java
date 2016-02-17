@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 import Controller.RecursionController;
+import Model.CodeTimer;
 
 public class RecursionPanel extends JPanel {
 
@@ -20,8 +21,10 @@ public class RecursionPanel extends JPanel {
 	private JTextField inputField;
 	private JTextArea displayArea;
 	private SpringLayout baseLayout;
+	private JTextArea timeDisplay;
+	private CodeTimer baseTimer;
 	
-	public RecursionPanel(RecursionController baseController) {
+	public RecursionPanel(RecursionController baseController, CodeTimer baseTimer) {
 		
 		this.baseController = baseController;
 		fibonacciButton = new JButton("Get the fib number");
@@ -29,6 +32,8 @@ public class RecursionPanel extends JPanel {
 		inputField = new JTextField(20);
 		displayArea = new JTextArea(10, 20);
 		baseLayout = new SpringLayout();
+		timeDisplay = new JTextArea(30, 40);
+		this.baseTimer = baseTimer;
 		
 		
 		setupPanel();
@@ -47,6 +52,7 @@ public class RecursionPanel extends JPanel {
 		displayArea.setLineWrap(true);
 		displayArea.setEditable(false);
 		displayArea.setText(baseController.getCalcVal());
+		timeDisplay.setText(baseTimer.toString());
 		
 	}
 	
